@@ -6,28 +6,23 @@ import Header from '../components/header'
 
 
 
-const PageTemplate = (props) => {
+const Contact = (props) => {
   const categories = props.data.allWordpressCategory;
   const pages = props.data.allWordpressPage;
-  const page = props.data.wordpressPage;
 
   return (
       <div>
       <Header pages={pages} categories={categories} primary={true} currentPage={props.location.pathname}></Header>
-      <h1>for sure</h1>
+      <h1>hello Josh</h1>
       </div>
   )
 }
 
-export default PageTemplate
+export default Contact
 
 
-export const pageQuery = graphql`
-  query pageQuery($id: String!) {  
-    wordpressPage(id: { eq: $id }) {
-      title
-      content
-    }
+export const contactQuery = graphql`
+  query contactQuery {  
     allWordpressPage {
       edges {
         node {
@@ -47,9 +42,6 @@ export const pageQuery = graphql`
           taxonomy
         }
       }
-    } 
-    wordpressCategory(id: { eq: $id }) {
-      name
     }
   }
 `;

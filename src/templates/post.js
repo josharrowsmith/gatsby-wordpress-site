@@ -1,37 +1,54 @@
 import React from 'react'
+import styled from 'styled-components'
 import Link from 'gatsby-link'
-import Footer from '../layouts/footer'
-import { format } from 'date-fns'
+import Header from '../components/header'
 
-const PostTemplate = ({ data }) => {
-  const post = data.wordpressPost
+
+const PageTemplate = (props) => {
+  const categories = props.data.allWordpressCategory;
+  const pages = props.data.allWordpressPage;
+  const categoryPosts = props.data.allWordpressPost;
+  const post = props.data.wordpressPost;
 
   return (
-    <div >
-        <div className="date">{format(new Date(post.date), ("MMM DD, YYYY"))}</div>
-        <div className="post-content" dangerouslySetInnerHTML={{ __html: post.content }} />
-        <Link to="/blog" className="back-to-blog">Back to Blog</Link>
+      <div>
+      <Header pages={pages} categories={categories} primary={true} currentPage={props.location.pathname}></Header>
+      <Title dangerouslySetInnerHTML={{ __html: post.title }} />
       </div>
   )
 }
 
-export default PostTemplate
+export default PageTemplate
 
-export const pageQuery = graphql`
-  query currentPostQuery($id: String!) {
+
+export const postQuery = graphql`
+  query postQuery($id: String!) {
     wordpressPost(id: { eq: $id }) {
       title
       content
-      excerpt
-      date
-    }
-    site {
-      id
-      siteMetadata {
-        title
-        
+    }    
+    allWordpressCategory {
+      edges {
+        node {
+          id
+          description
+          name
+          slug
+          taxonomy
+        }
       }
     }
+    allWordpressPage {
+      edges {
+        node {
+          id
+          title
+          slug
+        }
+      }
+    }    
+    wordpressCategory(id: { eq: $id }) {
+      name
+    }
   }
-`
-
+`;

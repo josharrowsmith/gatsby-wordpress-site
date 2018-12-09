@@ -1,33 +1,61 @@
 import React from 'react'
+import styled from 'styled-components'
 import Link from 'gatsby-link'
 
-//
-// Home page of portfolio site
-//
-const IndexPage = ({ data }) => {
-  const homepage = data.wordpressPage
-  const profileImage = data.wordpressPage.acf.home_page_image
+import Header from '../components/header'
 
-  return (
-    <div>
-      <img src={profileImage}/>
-      <div className="inner" dangerouslySetInnerHTML={{ __html: homepage.content }} />
-    </div>
-  )
-}
 
-export default IndexPage
 
-// Pull the homepage content from Wordpress
-export const homePageQuery = graphql`
-query homePageQuery {
-  wordpressPage(slug: {eq: "home"}) {
-    id
-    title
-    content
-    acf {
-      home_page_image
-    }
+export default class IndexPage extends React.Component {
+  constructor() {
+    super()
+  }
+
+  render() {
+    const categories = this.props.data.allWordpressCategory;
+    const pages = this.props.data.allWordpressPage;
+
+    return(
+      <div>
+        <Header pages={pages} categories={categories} currentPage={this.props.location.pathname}/> 
+      </div>  
+    )
+  
   }
 }
+
+export const pageQuery = graphql`
+  query homePage {
+    allWordpressCategory {
+      edges {
+        node {
+          id
+          description
+          name
+          slug
+          taxonomy
+        }
+      }
+    }
+    allWordpressPage {
+      edges {
+        node {
+          id
+          title
+          slug
+        }
+      }
+    }
+    allWordpressPost(limit: 5) {
+      edges{
+        node {
+          id
+          title
+          slug
+          format
+          categories
+        }
+      }
+    }    
+  }
 `
