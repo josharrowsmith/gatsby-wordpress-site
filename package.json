@@ -1,0 +1,27 @@
+{
+  "name": "gatsby-site",
+  "description": "My portfolio site using GatsbyJS pulling data from Wordpress REST API",
+  "version": "1.2.0",
+  "author": "Josh Arrowsmith",
+  "dependencies": {
+    "create-react-class": "^15.6.3",
+    "gatsby": "^1.9.222",
+    "gatsby-link": "^1.6.38",
+    "gatsby-plugin-react-helmet": "^1.0.8",
+    "gatsby-plugin-styled-components": "^1.0.1",
+    "gatsby-source-wordpress": "^2.0.62",
+    "react-particles-js": "^2.4.2",
+    "react-typist": "^2.0.5"
+  },
+  "keywords": [
+    "gatsby",
+    "wordpress"
+  ],
+  "license": "MIT",
+  "main": "n/a",
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}
