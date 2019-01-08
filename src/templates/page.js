@@ -44,10 +44,6 @@ export const pageQuery = graphql`
           description
           name
           slug
-<<<<<<< HEAD
-=======
-          taxonomy
->>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
         }
       }
     } 

@@ -109,11 +109,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             context: {
               id: edge.node.id,
               // TODO: there probably a better way to solve this
-<<<<<<< HEAD
               cleanId: edge.node.name
-=======
-              cleanId: edge.node.id.split('CATEGORY_')[1]
->>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
             },
           })
         })

@@ -1,10 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
-<<<<<<< HEAD
-=======
-
->>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
 import Header from '../components/header'
 
 
@@ -42,10 +38,6 @@ export const contactQuery = graphql`
           description
           name
           slug
-<<<<<<< HEAD
-=======
-          taxonomy
->>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
         }
       }
     }
