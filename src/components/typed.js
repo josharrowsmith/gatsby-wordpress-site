@@ -16,7 +16,7 @@ const Stuff = styled.div`
 const Underline = styled.span`
     border-bottom: 5px white solid;
 `
-
+//Josh 101 sketchy hacks why dont you have loop function plz
 const words = ['Websites', 'React Apps', 'red bull'];
     const word2 = ['I build', 'I make', 'I drink'];
 

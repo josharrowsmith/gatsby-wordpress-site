@@ -17,14 +17,13 @@ export default class Background extends React.Component {
       super(props);
           this.state = {height: props.height, width:props.width};
     }
-    
+    //why isnt this working ???
     componentWillMount(){
       console.log("WINDOW : ",window);
       this.setState({height: window.innerHeight + 'px',width:window.innerWidth+'px'});
     }
     render() {
       console.log("VIEW : ",this.state);
-  
       return(
           <Particles height={this.props.height}
                   params={particlesconfig}
