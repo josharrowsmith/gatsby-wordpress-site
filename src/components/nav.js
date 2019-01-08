@@ -4,6 +4,7 @@ import Link from 'gatsby-link'
 
 const Wrapper = styled.nav`
     padding-left: 35px;
+<<<<<<< HEAD
 `
 
 const A = styled(({ primary, children, ...rest }) => <Link {...rest}>{children}</Link>)`
@@ -20,6 +21,9 @@ const A = styled(({ primary, children, ...rest }) => <Link {...rest}>{children}<
     &.active {
         border-bottom: 3px solid #fff;
     }
+=======
+    margin-top: 20px;   
+>>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
 `
 
 const INVALID_PAGES = ['uncategorized'];
@@ -34,7 +38,11 @@ const isValidPage = ({ node }) => {
 }
 
 const renderPageLink = ({ slug, title, primary, currentPage, active }) => (
+<<<<<<< HEAD
     <A 
+=======
+    <Link 
+>>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
         key={slug} 
         to={`/${slug}`} 
         primary={primary || active}
@@ -44,7 +52,11 @@ const renderPageLink = ({ slug, title, primary, currentPage, active }) => (
 )
 
 const renderCategoryLink = ({ slug, name, primary, currentPage, active }) => (
+<<<<<<< HEAD
     <A 
+=======
+    <Link 
+>>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
         key={slug} 
         to={`/category/${slug}`} 
         primary={primary || active}
@@ -56,11 +68,20 @@ const renderCategoryLink = ({ slug, name, primary, currentPage, active }) => (
 
 const Nav = ({ pages, categories, primary, currentPage, active }) => (
     <Wrapper className={active && 'active'}>
+<<<<<<< HEAD
         <A to={'/'} 
            primary={primary || active} 
            className={isCurrentPage(currentPage, `/`)}>
         Home
         </A>
+=======
+        <Link to={'/'} 
+           primary={primary || active} 
+           className={isCurrentPage(currentPage, `/`)}>
+        Home
+        </Link>
+        
+>>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
         {categories && 
             categories.edges
                 .filter(isValidPage)
@@ -72,6 +93,10 @@ const Nav = ({ pages, categories, primary, currentPage, active }) => (
                 .filter(isValidPage)
                 .map((edge) => renderPageLink({ ...edge.node, primary, currentPage, active }))
         }
+<<<<<<< HEAD
+=======
+
+>>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
     </Wrapper>
 )
 

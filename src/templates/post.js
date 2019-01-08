@@ -4,7 +4,10 @@ import Link from 'gatsby-link'
 import Header from '../components/header'
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
 const PageTemplate = (props) => {
   const categories = props.data.allWordpressCategory;
   const pages = props.data.allWordpressPage;
@@ -14,8 +17,12 @@ const PageTemplate = (props) => {
   return (
       <div>
       <Header pages={pages} categories={categories} primary={true} currentPage={props.location.pathname}></Header>
+<<<<<<< HEAD
       <h1 dangerouslySetInnerHTML={{ __html: post.title }} />
       <img src={post.acf.project_image.source_url}/>
+=======
+      <Title dangerouslySetInnerHTML={{ __html: post.title }} />
+>>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
       </div>
   )
 }
@@ -28,11 +35,14 @@ export const postQuery = graphql`
     wordpressPost(id: { eq: $id }) {
       title
       content
+<<<<<<< HEAD
       acf{
         project_image{
           source_url
         }
       }
+=======
+>>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
     }    
     allWordpressCategory {
       edges {
@@ -41,6 +51,10 @@ export const postQuery = graphql`
           description
           name
           slug
+<<<<<<< HEAD
+=======
+          taxonomy
+>>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
         }
       }
     }

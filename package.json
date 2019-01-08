@@ -4,6 +4,7 @@
   "version": "1.2.0",
   "author": "Josh Arrowsmith",
   "dependencies": {
+<<<<<<< HEAD
     "create-react-class": "^15.6.3",
     "gatsby": "^1.9.222",
     "gatsby-link": "^1.6.38",
@@ -12,6 +13,16 @@
     "gatsby-source-wordpress": "^2.0.62",
     "react-particles-js": "^2.4.2",
     "react-typist": "^2.0.5"
+=======
+    "gatsby": "^1.0.1",
+    "gatsby-link": "^1.0.1",
+    "gatsby-plugin-google-analytics": "^1.0.1",
+    "gatsby-plugin-manifest": "^1.0.1",
+    "gatsby-plugin-offline": "^1.0.1",
+    "gatsby-plugin-react-helmet": "^1.0.1",
+    "gatsby-plugin-styled-components": "^1.0.1",
+    "gatsby-source-wordpress": "^1.5.0"
+>>>>>>> 26d9e03ab49d67690300c96cf0e70115d5403955
   },
   "keywords": [
     "gatsby",
