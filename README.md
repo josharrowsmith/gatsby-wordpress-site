@@ -7,10 +7,9 @@ this is only the backend layout of the page for now.
 ## TODO
 - [ ] styling everything !!
 - [ ] particle.js as backgrond ?
-- [ ] fix particle.js mobile styling
 - [X] look into how tags and categories work with gatsby
 - [ ] Use gatsby-plugin for lazy-loading images
 - [ ] sass and css
-- [X] acf working
-- [ ] look into how custom post type work with graphql
+- [ ] maybe see if react vr works with gatsby ???????
+- [X] look into how custom post type work with graphql
 

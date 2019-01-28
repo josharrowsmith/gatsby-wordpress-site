@@ -4,6 +4,32 @@ import Link from 'gatsby-link'
 
 const Wrapper = styled.nav`
     padding-left: 35px;
+
+     @media screen and (max-width: 768px) {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        opacity: 0;
+        transition: opacity .5s ease;
+        background: black;
+        margin: 0;
+        padding: 0;
+        &.active {
+            display: flex;
+            opacity: 1;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            a {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+        }
+    }    
 `
 
 const A = styled(({ primary, children, ...rest }) => <Link {...rest}>{children}</Link>)`
@@ -14,8 +40,6 @@ const A = styled(({ primary, children, ...rest }) => <Link {...rest}>{children}<
     transition: all .2s ease-in-out;
     padding: 9px 0 7px;
     font-weight: 700;
-    
-
     &:hover,
     &.active {
         border-bottom: 3px solid #fff;

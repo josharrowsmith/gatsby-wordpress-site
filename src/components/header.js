@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Link from 'gatsby-link'
 import Container from './container'
 import Nav from './nav';
+import Hamburger from './hamburger'
 
 
 const HeaderContainer = styled(Container)`
@@ -31,6 +32,7 @@ const Left = styled.div`
 const Right = styled.div`
     display: flex;
     align-items: center;
+    z-index: 1;
 `;
 
 const HeaderName = styled.h1`
@@ -38,10 +40,22 @@ const HeaderName = styled.h1`
     text-decoration: underline;
     text-underline-position: under;
     text-transform: uppercase;
+    font-size: 2rem;
+    @media only screen and (max-width: 600px) {
+        font-size: 1rem;
+  }
 `;
 
 const MainMenu = styled.a`
-    color: white
+    color: white;
+`;
+
+const HeaderHamburger = styled(Hamburger)`
+    display: none;
+
+    @media screen and (max-width: 768px) {
+        display: block;
+    }    
 `;
 
 
@@ -55,13 +69,21 @@ export default class Header extends React.Component {
         
     }
 
+    onClickHamburger() {
+        this.setState({
+            hamburgerActive: !this.state.hamburgerActive
+        });
+    }
+
     render() {
         const { pages, categories, primary, currentPage } = this.props
         return (
             <Wrapper>
             <HeaderContainer>
                     <Left>
-                      <HeaderName>Josh Arrowsmith</HeaderName>
+                    <Link to={`/`}>
+                      <HeaderName primary={primary || this.state.hamburgerActive}>Josh Arrowsmith</HeaderName>
+                    </Link>
                     </Left> 
                     <Right>
                     <Nav 
@@ -70,7 +92,8 @@ export default class Header extends React.Component {
                         categories={categories}
                         currentPage={currentPage}
                         active={this.state.hamburgerActive}
-                    />     
+                    /> 
+                    <HeaderHamburger onClick={() => this.onClickHamburger()} active={this.state.hamburgerActive} />    
                     </Right>
             </HeaderContainer>
             </Wrapper>
