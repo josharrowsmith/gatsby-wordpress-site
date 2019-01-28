@@ -67,8 +67,5 @@ export const pageQuery = graphql`
         }
       }
     } 
-    wordpressCategory(id: { eq: $id }) {
-      name
-    }
   }
 `;

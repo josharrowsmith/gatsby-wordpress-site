@@ -1,12 +1,22 @@
 import React from 'react'
 import styled from 'styled-components'
+import Link from 'gatsby-link'
 import Header from '../components/header'
 import Back from '../components/background'
 import LazyLoad from 'react-lazyload';
 import Img from 'gatsby-image';
-import Wrapper from '../components/wrapper'
-import Title from '../components/title'
-import PostLink from '../components/postLink'
+
+const Wrapper = styled.div`
+  padding: 0px 20px 30px;
+  position: absolute;
+  top:140px;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  @media screen and (max-width: 768px) {
+        top: 80px;
+      }  
+`;
 
 
 const MainContainer = styled.div`
@@ -57,6 +67,24 @@ const PostWrapper = styled.div`
           grid-column: auto;
         }
       } 
+
+`
+
+const Title = styled.h1`
+    color: white;
+    font-size: 1rem;
+    text-decoration: none;
+
+`
+
+const A = styled(Link)`
+    text-decoration: none;
+    margin-right: 25px;
+    font-size: 1.2rem;
+    padding: 9px 0 7px;
+    font-weight: 700;
+    &:hover {
+  }
 `
 
 export default class PageTemplate extends React.Component {
@@ -78,18 +106,18 @@ export default class PageTemplate extends React.Component {
   
   return (
       <div>
-      <Back/>
+      <Back height={1800}/>
       <Header pages={pages} categories={categories} primary={true} currentPage={this.props.location.pathname}></Header>
       <Wrapper>
       <MainContainer>
       {categoryPosts.edges.map(({ node }) => (
         <PostWrapper>
-        <PostLink to={`/post/${node.slug}`}>
+        <A to={`/post/${node.slug}`}>
             <LazyLoad height={600}>
             <ImageContanier sizes={node.acf.project_image.localFile.childImageSharp.sizes} src={node.acf.project_image.localFile.childImageSharp.sizes}/>
             </LazyLoad>
             <Title>{node.title}</Title>
-        </PostLink>
+        </A>
         </PostWrapper>
       ))}
       </MainContainer>
@@ -123,7 +151,7 @@ export const pageQuery = graphql`
     wordpressCategory(id: { eq: $id }) {
       name
     }
-    allWordpressPost(filter: {categories: {elemMatch: {name: { eq: $cleanId }}}}, sort: { order: ASC, fields: [date]}){
+    allWordpressPost(filter: {categories: {elemMatch :{name:{eq: $cleanId }}}}, sort: { order: ASC, fields: [date]}){
       edges{
         node {
           id

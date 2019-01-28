@@ -176,8 +176,5 @@ export const postQuery = graphql`
         }
       }
     }    
-    wordpressCategory(id: { eq: $id }) {
-      name
-    }
   }
 `;
