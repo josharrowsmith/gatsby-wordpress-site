@@ -27,7 +27,7 @@ module.exports = {
     {
       resolve: 'gatsby-source-wordpress',
       options: {
-        baseUrl: '46.101.222.219',
+        baseUrl: 'what ip',
         protocol: 'http',
         hostingWPCOM: false,
         useACF: true,
