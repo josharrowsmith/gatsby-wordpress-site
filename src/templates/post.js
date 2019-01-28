@@ -118,7 +118,9 @@ const PageTemplate = (props) => {
       <MainContainer>
         <A> 
         <Title>{post.title}</Title>
+        {post.acf.gallery !== null &&
         <ImageContanier sizes={post.acf.gallery.localFile.childImageSharp.sizes} imgStyle={{ "objectFit": "fill"}}/>
+        }
         </A>
         <A> 
           <Content>

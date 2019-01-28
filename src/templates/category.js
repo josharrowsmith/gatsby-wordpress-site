@@ -94,33 +94,33 @@ export default class PageTemplate extends React.Component {
       loading: true
     }
   }
-  
 
 
   render() {
   const categories = this.props.data.allWordpressCategory;
   const pages = this.props.data.allWordpressPage;
   const categoryPosts = this.props.data.allWordpressPost;
-  const category = this.props.data.wordpressCategory;
-
   
   return (
       <div>
       <Back height={1800}/>
       <Header pages={pages} categories={categories} primary={true} currentPage={this.props.location.pathname}></Header>
       <Wrapper>
+     
+      {categoryPosts !== null &&
       <MainContainer>
       {categoryPosts.edges.map(({ node }) => (
         <PostWrapper>
         <A to={`/post/${node.slug}`}>
             <LazyLoad height={600}>
-            <ImageContanier sizes={node.acf.project_image.localFile.childImageSharp.sizes} src={node.acf.project_image.localFile.childImageSharp.sizes}/>
+            <ImageContanier sizes={node.acf.project_image.localFile.childImageSharp.sizes}/>
             </LazyLoad>
             <Title>{node.title}</Title>
         </A>
         </PostWrapper>
       ))}
       </MainContainer>
+      }
       </Wrapper>
       </div>
     )

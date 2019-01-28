@@ -11,7 +11,7 @@ export default class Background extends React.Component {
     
     componentWillMount(){
       // console.log("WINDOW : ",window);
-      this.setState({height: window.innerHeight + 'px',width:window.innerWidth+'px'});
+      //this.setState({height: window.innerHeight + 'px',width:window.innerWidth+'px'});
     }
     render() {
       // console.log("VIEW : ",this.state);
