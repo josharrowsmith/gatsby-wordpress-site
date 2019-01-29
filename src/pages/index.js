@@ -64,7 +64,7 @@ export default class IndexPage extends React.Component {
 
     return(
       <Wrapper>
-        <Back height={2000}/>
+        <Back/>
           <Header pages={pages} categories={categories} currentPage={this.props.location.pathname}></Header>
             <Typed />
               <Parlx>
