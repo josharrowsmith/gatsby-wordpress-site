@@ -29,7 +29,7 @@ const PageTemplate = (props) => {
 
   return (
       <div>
-      <Back/>
+      <Back height={800}/>
       <Header pages={pages} categories={categories} primary={true} currentPage={props.location.pathname}></Header>
       <Wrapper>
         <Content dangerouslySetInnerHTML={{ __html:page.content}}/>
