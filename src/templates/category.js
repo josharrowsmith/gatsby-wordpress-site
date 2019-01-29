@@ -103,10 +103,9 @@ export default class PageTemplate extends React.Component {
   
   return (
       <div>
-      <Back height={1800}/>
+      <Back height={2000}/>
       <Header pages={pages} categories={categories} primary={true} currentPage={this.props.location.pathname}></Header>
       <Wrapper>
-     
       {categoryPosts !== null &&
       <MainContainer>
       {categoryPosts.edges.map(({ node }) => (

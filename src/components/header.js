@@ -42,12 +42,8 @@ const HeaderName = styled.h1`
     text-transform: uppercase;
     font-size: 2rem;
     @media only screen and (max-width: 600px) {
-        font-size: 1rem;
+        font-size: 1.2rem;
   }
-`;
-
-const MainMenu = styled.a`
-    color: white;
 `;
 
 const HeaderHamburger = styled(Hamburger)`

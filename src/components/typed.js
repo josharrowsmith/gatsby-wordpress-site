@@ -2,10 +2,10 @@ import React from 'react'
 import styled from 'styled-components'
 import Typist from 'react-typist';
 
-const Stuff = styled.div`
-    background: black;
+const TypedContanier  = styled.div`
+    background: transparent;
     position: absolute;
-    bottom: 100px;
+    bottom: 10%;
     left: 70%;
     color: white;
     font-size: 3rem;
@@ -33,7 +33,7 @@ const word2 = ['I build', 'I make', 'I drink'];
     }
 
 const Typed = ({stuff}) => (
-        <Stuff>
+        <TypedContanier>
         <Typist
           cursor={{ show: false }}>
           {word2.map((word, i) => (
@@ -45,7 +45,7 @@ const Typed = ({stuff}) => (
               />
             </Underline>
           ))}
-          Cool Stuff
+          <Underline>Cool Stuff</Underline>
         </Typist>
         <Typist cursor={{ show: false }}>
           {words.map((word, i) => (
@@ -58,7 +58,7 @@ const Typed = ({stuff}) => (
             </Underline>
           ))}
         </Typist>
-        </Stuff>
+        </TypedContanier>
 )
 
 export default Typed

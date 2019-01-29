@@ -6,6 +6,8 @@ import Header from '../components/header'
 import Typed from '../components/typed'
 import Marquee from '../components/Marquee'
 import { ParallaxProvider } from 'react-scroll-parallax';
+import particlesconfig2 from '../json/data2.json';
+import particlesconfig from '../json/data.json';
 
 const Wrapper = styled.div`
     display: flex;
@@ -29,17 +31,20 @@ const Tags = styled.div`
 
 
 export default class IndexPage extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      loading: true
-    }
+  constructor(props) {
+    super(props);
+    this.state = {height: props.height, width:props.width};
+  }
+
+  componentDidMount(){
+    console.log("WINDOW : ",window.innerHeight, window.innerWidth);
+    this.setState({height: window.innerHeight + 'px',width:window.innerWidth+'px'});
   }
 
   render() {
     const categories = this.props.data.allWordpressCategory;
     const pages = this.props.data.allWordpressPage;
-    const post = this.props.data.wordpressPage;
+    const post = this.props.data.wordpressPage; 
 
     if(post.acf.front_end_software !== null){
       var frontEnd = post.acf.front_end_software.map((node) =>
@@ -59,14 +64,14 @@ export default class IndexPage extends React.Component {
 
     return(
       <Wrapper>
-        <Back />
-        <Header pages={pages} categories={categories} currentPage={this.props.location.pathname}></Header>
-        <Typed />
-        <Parlx>
-      <ParallaxProvider>
-          <Marquee backend={backEnd} frontend={frontEnd}/>
-      </ParallaxProvider>
-      </Parlx>
+        <Back height={2000}/>
+          <Header pages={pages} categories={categories} currentPage={this.props.location.pathname}></Header>
+            <Typed />
+              <Parlx>
+                <ParallaxProvider>
+                  <Marquee backend={backEnd} frontend={frontEnd}/>
+                </ParallaxProvider>
+              </Parlx>
       </Wrapper>
     )
   }

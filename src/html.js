@@ -13,7 +13,7 @@ export default function HTML(props) {
         />
         {props.headComponents}
       </head>
-      <body style={{"margin": "0", "background": "#000"}}{...props.bodyAttributes}>
+      <body style={{"margin": "0", "background": "#000", "overflow-x": "hidden"}}{...props.bodyAttributes}>
         {props.preBodyComponents}
         <noscript key="noscript" id="gatsby-noscript">
           This app works best with JavaScript enabled.

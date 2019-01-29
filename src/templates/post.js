@@ -12,12 +12,12 @@ const MainContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
     width: 100%;
-    align-items: flex-start;
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
         margin: 0;
+        padding:0;
         text-align: center;
-        left: 8%;
+        margin-left: 10px;
       } 
 `;
 
@@ -49,7 +49,7 @@ const Wrapper = styled.div`
   top:140px;
   @media screen and (max-width: 768px) {
         top: 80px;
-        padding-left: 5px;
+        padding: 0;
       } 
 `;
 
@@ -67,7 +67,6 @@ const Content = styled.div`
         height: auto;
       } 
 `
-
 const TextStyle = styled.p`
      margin-top: -10px;
 `
