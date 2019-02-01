@@ -6,8 +6,7 @@ import Header from '../components/header'
 import Typed from '../components/typed'
 import Marquee from '../components/Marquee'
 import { ParallaxProvider } from 'react-scroll-parallax';
-import particlesconfig2 from '../json/data2.json';
-import particlesconfig from '../json/data.json';
+
 
 const Wrapper = styled.div`
     display: flex;
@@ -33,12 +32,20 @@ const Tags = styled.div`
 export default class IndexPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {height: props.height, width:props.width};
+    this.state = {
+      height: props.height,
+      width: props.width,
+      data: props.data
+    }
   }
-
-  componentDidMount(){
-    console.log("WINDOW : ",window.innerHeight, window.innerWidth);
-    this.setState({height: window.innerHeight + 'px',width:window.innerWidth+'px'});
+  
+  componentWillMount(){
+    if(window.innerWidth > 1000){
+      var height = 2000;
+    } else {
+      var height = window.innerHeight;
+    }
+    this.setState({height: height + 'px'});
   }
 
   render() {
@@ -64,12 +71,12 @@ export default class IndexPage extends React.Component {
 
     return(
       <Wrapper>
-        <Back height={2000}/>
+        <Back height={this.state.height}/>
           <Header pages={pages} categories={categories} currentPage={this.props.location.pathname}></Header>
             <Typed />
               <Parlx>
                 <ParallaxProvider>
-                  <Marquee backend={backEnd} frontend={frontEnd}/>
+                  <Marquee frontend={frontEnd} backend={backEnd}/>
                 </ParallaxProvider>
               </Parlx>
       </Wrapper>

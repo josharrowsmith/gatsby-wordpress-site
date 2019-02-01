@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
 import Header from '../components/header'
 import Back from '../components/background'
 
@@ -20,25 +19,41 @@ const Content = styled.h1`
 `;
 
 
+export default class PageTemplate extends React.Component {
+  constructor(props) {
+    super(props)
+      this.state = {
+        loading: true,
+      }
+  }
 
+  componentWillMount(){
+    if(window.innerWidth > 1000){
+      var height = 2000;
+    } else {
+      var height = window.innerHeight;
+    }
+    this.setState({height: height + 'px'});
+  }
 
-const PageTemplate = (props) => {
-  const categories = props.data.allWordpressCategory;
-  const pages = props.data.allWordpressPage;
-  const page = props.data.wordpressPage;
+  render() {
+  const categories = this.props.data.allWordpressCategory;
+  const pages = this.props.data.allWordpressPage;
+  const page = this.props.data.wordpressPage;
 
   return (
       <div>
-      <Back height={800}/>
-      <Header pages={pages} categories={categories} primary={true} currentPage={props.location.pathname}></Header>
+      <Back height={this.state.height}/>
+      <Header pages={pages} categories={categories} primary={true} currentPage={this.props.location.pathname}></Header>
       <Wrapper>
         <Content dangerouslySetInnerHTML={{ __html:page.content}}/>
       </Wrapper>
       </div>
-  )
+    )
+  }
 }
 
-export default PageTemplate
+
 
 
 export const pageQuery = graphql`

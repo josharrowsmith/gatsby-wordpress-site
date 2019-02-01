@@ -88,12 +88,23 @@ const A = styled(Link)`
 `
 
 export default class PageTemplate extends React.Component {
-  constructor() {
-    super()
-    this.state = {
-      loading: true
-    }
+  constructor(props) {
+    super(props)
+      this.state = {
+        loading: true,
+        height: props.height
+      }
   }
+
+  componentWillMount(){
+    if(window.innerWidth > 1000){
+      var height = 2000;
+    } else {
+      var height = 3000;
+    }
+    this.setState({height: height + 'px'});
+  }
+
 
 
   render() {
@@ -103,7 +114,7 @@ export default class PageTemplate extends React.Component {
   
   return (
       <div>
-      <Back height={3200}/>
+      <Back height={this.state.height}/>
       <Header pages={pages} categories={categories} primary={true} currentPage={this.props.location.pathname}></Header>
       <Wrapper>
       {categoryPosts !== null &&

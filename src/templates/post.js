@@ -85,13 +85,27 @@ const Tags = styled.p`
       font-size: 0.6rem;
     }
 `
+export default class PageTemplate extends React.Component {
+  constructor(props) {
+    super(props)
+      this.state = {
+        loading: true,
+      }
+  }
 
+  componentWillMount(){
+    if(window.innerWidth > 1000){
+      var height = 2000;
+    } else {
+      var height = 800;
+    }
+    this.setState({height: height + 'px'});
+  }
 
-const PageTemplate = (props) => {
-  const categories = props.data.allWordpressCategory;
-  const pages = props.data.allWordpressPage;
-  const categoryPosts = props.data.allWordpressPost;
-  const post = props.data.wordpressPost;
+  render() {
+  const categories = this.props.data.allWordpressCategory;
+  const pages = this.props.data.allWordpressPage;
+  const post = this.props.data.wordpressPost;
 
   if(post.acf.front_end_software !== null){
     var frontEnd = post.acf.front_end_software.map((node) =>
@@ -111,8 +125,8 @@ const PageTemplate = (props) => {
 
   return (
       <div>
-      <Back/>
-      <Header pages={pages} categories={categories} primary={true} currentPage={props.location.pathname}></Header>
+      <Back height={this.state.height}/>
+      <Header pages={pages} categories={categories} primary={true} currentPage={this.props.location.pathname}></Header>
       <Wrapper>
       <MainContainer>
         <A> 
@@ -133,10 +147,9 @@ const PageTemplate = (props) => {
       </MainContainer>
       </Wrapper>
       </div>
-  )
+    )
+  }
 }
-
-export default PageTemplate
 
 
 export const postQuery = graphql`

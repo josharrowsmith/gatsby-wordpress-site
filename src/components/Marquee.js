@@ -50,7 +50,7 @@ export default class Marquee extends React.Component {
                     >
                     <TagsContainer>
                     <TagTitle>Front-End Skills</TagTitle>
-                    {this.props.backend}
+                    {this.props.frontend}
                     </TagsContainer>
                     </Parallax>
                     <Parallax
@@ -61,7 +61,7 @@ export default class Marquee extends React.Component {
                     >
                         <TagsContainer>
                         <TagTitle>Back-End Skills</TagTitle>
-                        {this.props.frontend}
+                        {this.props.backend}
                         </TagsContainer>
                     </Parallax>
             </ParallaxContainer> 
