@@ -14,12 +14,14 @@ export default class Background extends React.Component {
     }
     
     componentWillMount(){
-      if(window.innerWidth > 1000){
-        var pj = particlesconfig;
-      } else {
-        var pj = particlesconfig2;
+      if (typeof window !== 'undefined') {
+        if(window.innerWidth > 1000){
+          var pj = particlesconfig;
+        } else {
+          var pj = particlesconfig2;
+        }
+        this.setState({height: window.innerHeight + 'px',width:window.innerWidth+'px', data:pj});
       }
-      this.setState({height: window.innerHeight + 'px',width:window.innerWidth+'px', data:pj});
     }
     render() {
       return(

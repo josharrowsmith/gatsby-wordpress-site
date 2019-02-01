@@ -6,6 +6,7 @@ module.exports = {
     "gatsby-plugin-react-helmet",
     "gatsby-transformer-sharp",
     "gatsby-plugin-sharp",
+    "gatsby-plugin-styled-components",
     "gatsby-plugin-offline",
     {
       resolve: 'gatsby-plugin-manifest',
