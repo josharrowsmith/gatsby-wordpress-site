@@ -12,8 +12,9 @@ const TypedContanier  = styled.div`
     height: 100px;
     text-transform: uppercase;
     @media screen and (max-width: 768px) {
-      left: 10%;
+      left: 20px;
       font-size: 2rem;
+      line-height: 2.8rem;
     }
 `
 

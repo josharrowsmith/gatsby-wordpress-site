@@ -75,7 +75,7 @@ export default class IndexPage extends React.Component {
       <Wrapper>
         <Back height={this.state.height}/>
           <Header pages={pages} categories={categories} currentPage={this.props.location.pathname}></Header>
-            <Typed />
+            <Typed/>
               <Parlx>
                 <ParallaxProvider>
                   <Marquee frontend={frontEnd} backend={backEnd}/>
