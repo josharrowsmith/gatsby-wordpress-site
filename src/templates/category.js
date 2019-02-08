@@ -99,7 +99,7 @@ export default class PageTemplate extends React.Component {
   componentWillMount(){
     if (typeof window !== 'undefined') {
       if(window.innerWidth > 1000){
-        var height = 2000;
+        var height = 1800;
       } else {
         var height = 3000;
       }

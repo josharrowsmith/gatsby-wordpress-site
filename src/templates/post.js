@@ -9,15 +9,18 @@ const MainContainer = styled.div`
     position: relative;
     top: 5%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 40% 1fr;
     grid-gap: 20px;
     width: 100%;
+    padding-left: 40px;
+    padding-right:60px;
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
         margin: 0;
         padding:0;
         text-align: center;
-        margin-left: 10px;
+        margin-left: 20px;
+        margin-right: 20px;
       } 
 `;
 
@@ -63,7 +66,7 @@ const Content = styled.div`
     @media screen and (max-width: 768px) {
         font-size: 0.7rem;
         margin-top: 10px;
-        width: 300px;
+        width: 350px;
         height: auto;
       } 
 `
@@ -96,9 +99,9 @@ export default class PageTemplate extends React.Component {
   componentWillMount(){
     if (typeof window !== 'undefined') {
       if(window.innerWidth > 1000){
-        var height = 2000;
-      } else {
         var height = 800;
+      } else {
+        var height = 1000;
       }
       this.setState({height: height + 'px'});
     }
@@ -124,6 +127,22 @@ export default class PageTemplate extends React.Component {
     </Tags>
     );
   }
+
+  /*Trying to get youtube video to parse 
+  const Video = () =>{
+    <div
+      className='content'
+      dangerouslySetInnerHTML={{
+        __html: post.content
+          .replace(/&lt;/g, '<')
+          .replace(/&gt;/g, '>')
+          .replace(/&#8221;/g, '"')
+          .replace(/&#8220;/g, '"')
+          .replace(' </ iframe', '</iframe')
+      }}
+    />
+  }
+  */
 
   return (
       <div>

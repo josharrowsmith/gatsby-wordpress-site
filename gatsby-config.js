@@ -8,6 +8,7 @@ module.exports = {
     "gatsby-plugin-sharp",
     "gatsby-plugin-styled-components",
     "gatsby-plugin-offline",
+    "gatsby-transformer-remark",
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -42,5 +43,12 @@ module.exports = {
     //     pathToConfigModule: 'src/utils/typography'
     //   }
     // },
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [`gatsby-remark-responsive-iframe`],
+      },
+    },
+
   ],
 }
