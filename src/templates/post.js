@@ -19,8 +19,8 @@ const MainContainer = styled.div`
         margin: 0;
         padding:0;
         text-align: center;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 2%;
+        margin-right: 2%;
       } 
 `;
 
@@ -66,8 +66,8 @@ const Content = styled.div`
     @media screen and (max-width: 768px) {
         font-size: 0.7rem;
         margin-top: 10px;
-        width: 350px;
-        height: auto;
+        width: 90%;
+        height: 100%;
       } 
 `
 const TextStyle = styled.p`
