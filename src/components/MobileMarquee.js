@@ -11,8 +11,8 @@ const TagsContainer = styled.div`
     color: white;
     border: 5px white solid;
     border-radius: 3px;
-    width: 350px;
-    height: 350px;
+    width: 80%;
+    height: 100%;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -40,7 +40,7 @@ export default class MobileMarquee extends React.Component {
             <ParallaxContainer>
                     <Parallax
                         offsetXMax={`40%`}
-                        offsetXMin={`-100%`}
+                        offsetXMin={`-90%`}
                     >
                     <TagsContainer>
                     <TagTitle>Front-End Skills</TagTitle>
@@ -48,8 +48,8 @@ export default class MobileMarquee extends React.Component {
                     </TagsContainer>
                     </Parallax>
                     <Parallax
-                        offsetXMax={`-100%`}
-                        offsetXMin={`55%`}
+                        offsetXMax={`-80%`}
+                        offsetXMin={`45%`}
                     >
                     <TagsContainer>
                     <TagTitle>Back-End Skills</TagTitle>
