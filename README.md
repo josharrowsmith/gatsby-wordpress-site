@@ -6,10 +6,12 @@ this is only the backend layout of the page for now.
 
 ## TODO
 - [ ] styling everything !!
-- [ ] particle.js as backgrond ?
+- [X] particle.js as backgrond ?
 - [X] look into how tags and categories work with gatsby
-- [ ] Use gatsby-plugin for lazy-loading images
+- [X] Use gatsby-plugin for lazy-loading images
 - [ ] sass and css
-- [ ] maybe see if react vr works with gatsby ???????
 - [X] look into how custom post type work with graphql
+- [ ] Find a better way to deal with mobile responsiveness
+- [ ] Auth stuff
+- [ ] Fix post pages 
 

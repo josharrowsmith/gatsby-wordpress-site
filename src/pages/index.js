@@ -146,10 +146,12 @@ export default class IndexPage extends React.Component {
        <MobileMarquee frontend={frontEnd} backend={backEnd}/>
     )
 
+    if (typeof window !== 'undefined') {  
     if(window.innerWidth > 1000){
       ParallaxComponent = (
         <Marquee frontend={frontEnd} backend={backEnd}/>
       )
+     }
     }
 
     return(
