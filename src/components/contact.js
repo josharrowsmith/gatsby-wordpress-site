@@ -8,11 +8,12 @@ const ContactInfo = styled.div`
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     position: relative;
+    top: -300px;
     @media screen and (max-width: 768px) {
       display: grid;
       grid-template-columns: 1fr;
-      position: absolute;
-      top: 210%;
+      position: relative;
+      top: -500px;
       grid-row-gap: 50px;
       align-self: center;
     } 
