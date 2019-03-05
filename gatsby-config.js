@@ -49,6 +49,6 @@ module.exports = {
         plugins: [`gatsby-remark-responsive-iframe`],
       },
     },
-
+    `gatsby-plugin-netlify`,
   ],
 }

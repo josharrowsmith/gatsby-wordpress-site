@@ -62,7 +62,7 @@ const Links = styled.a`
      text-decoration: none;
 `
 
-const contact = ({ children}) => (
+const contact = ({children}) => (
     <ContactInfo>
     <Links href="http://46.101.222.219/wp-content/uploads/2019/03/Josh-Arrowsmith-resume-2018-dec.pdf" download="_Resume.pdf"><ResumeBtn>Resume</ResumeBtn></Links>
     <IconGrid>
