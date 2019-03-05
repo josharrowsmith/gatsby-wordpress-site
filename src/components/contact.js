@@ -64,7 +64,7 @@ const Links = styled.a`
 
 const contact = ({ children}) => (
     <ContactInfo>
-    <Links href="/Resume/Resume.pdf" download="_Resume.pdf"><ResumeBtn>Resume</ResumeBtn></Links>
+    <Links href="public/Resume/Resume.pdf" download="_Resume.pdf"><ResumeBtn>Resume</ResumeBtn></Links>
     <IconGrid>
       <a
         href="https://www.linkedin.com/in/josh-arrowsmith-723b02164/"
