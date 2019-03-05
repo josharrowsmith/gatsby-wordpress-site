@@ -105,7 +105,7 @@ export default class IndexPage extends React.Component {
                  {ParallaxComponent}
                 </ParallaxProvider>
               </Parlx>
-            <Contact/>
+            {/* <Contact/> */}
       </Wrapper>
     )
   }

@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import Link from 'gatsby-link'
 import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 
-
 const ContactInfo = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -65,7 +64,7 @@ const Links = styled.a`
 
 const contact = ({ children}) => (
     <ContactInfo>
-    <Links href="../../public/static/Resume" download="_Resume.pdf"><ResumeBtn>Resume</ResumeBtn></Links>
+    <Links href="/Resume/Resume.pdf" download="_Resume.pdf"><ResumeBtn>Resume</ResumeBtn></Links>
     <IconGrid>
       <a
         href="https://www.linkedin.com/in/josh-arrowsmith-723b02164/"
