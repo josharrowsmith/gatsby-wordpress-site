@@ -9,9 +9,6 @@ import Contact from '../components/contact'
 import MobileMarquee from '../components/MobileMarquee'
 import { ParallaxProvider } from 'react-scroll-parallax';
 
-
-
-
 const Wrapper = styled.div`
     display: flex;
     flex: 1;
@@ -51,7 +48,7 @@ export default class IndexPage extends React.Component {
     }
   }
   
-  componentWillMount(){
+  componentDidMount(){
     if (typeof window !== 'undefined') {
       if(window.innerWidth > 1000){
         var height = 2000;
@@ -83,13 +80,17 @@ export default class IndexPage extends React.Component {
       );
     }
     let ParallaxComponent = (
-       <MobileMarquee frontend={frontEnd} backend={backEnd}/>
+       <Marquee frontend={frontEnd} backend={backEnd}/>
     )
 
     if (typeof window !== 'undefined') {  
     if(window.innerWidth > 1000){
       ParallaxComponent = (
         <Marquee frontend={frontEnd} backend={backEnd}/>
+      )
+     } else {
+       ParallaxComponent = (
+       <MobileMarquee frontend={frontEnd} backend={backEnd}/>
       )
      }
     }
