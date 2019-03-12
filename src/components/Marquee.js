@@ -13,7 +13,7 @@ const TagsContainer = styled.div`
     color: white;
     border: 5px white solid;
     border-radius: 3px;
-    width: 350px;
+    width: 400px;
     height: 350px;
     display: flex;
     flex-wrap: wrap;
@@ -25,6 +25,7 @@ const TagTitle = styled.h1`
     color: white;
     margin: 0;
     padding:0;
+    width: 100%;
 `
 
 export default class Marquee extends React.Component {
@@ -39,26 +40,22 @@ export default class Marquee extends React.Component {
         return (
             <ParallaxContainer>
                     <Parallax
-                        offsetXMax={`20%`}
-                        offsetXMin={`0%`}
-                        disabled={this.state.mobile}
-                    >
-                    <TagsContainer>
-                    <TagTitle>Front-End Skills</TagTitle>
-                    <br></br>
-                    {this.props.frontend}
-                    </TagsContainer>
-                    </Parallax>
-                    <Parallax
-                        offsetXMax={`50%`}
-                        offsetXMin={`80%`}
-                        styleOuter={{marginTop: -380}}
-                        disabled={this.state.mobile}
+                        offsetXMax={`30%`}
+                        offsetXMin={`-5%`}
                     >
                         <TagsContainer>
-                        <TagTitle>Back-End Skills</TagTitle>
-                        <br></br>
-                        {this.props.backend}
+                            <TagTitle>Front-End Skills</TagTitle>
+                                {this.props.frontend}
+                        </TagsContainer>
+                    </Parallax>
+                    <Parallax
+                        offsetXMax={`40%`}
+                        offsetXMin={`80%`}
+                        styleOuter={{marginTop: -380}}
+                    >
+                        <TagsContainer>
+                            <TagTitle>Back-End Skills</TagTitle>
+                                {this.props.backend}
                         </TagsContainer>
                     </Parallax>
             </ParallaxContainer> 

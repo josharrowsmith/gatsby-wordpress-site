@@ -2,8 +2,8 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import Header from '../components/header'
-import Back from '../components/background'
 import Img from 'gatsby-image';
+import Background from '../components/background';
 
 const MainContainer = styled.div`
     position: relative;
@@ -91,20 +91,6 @@ const Tags = styled.p`
 export default class PageTemplate extends React.Component {
   constructor(props) {
     super(props)
-      this.state = {
-        loading: true,
-      }
-  }
-
-  componentWillMount(){
-    if (typeof window !== 'undefined') {
-      if(window.innerWidth > 1000){
-        var height = 800;
-      } else {
-        var height = 1000;
-      }
-      this.setState({height: height + 'px'});
-    }
   }
 
   render() {
@@ -146,7 +132,7 @@ export default class PageTemplate extends React.Component {
 
   return (
       <div>
-      <Back height={this.state.height}/>
+      <Background/>
       <Header pages={pages} categories={categories} primary={true} currentPage={this.props.location.pathname}></Header>
       <Wrapper>
       <MainContainer>

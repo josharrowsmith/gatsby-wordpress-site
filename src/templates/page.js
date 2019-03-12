@@ -2,6 +2,7 @@ import React from 'react'
 import styled from 'styled-components'
 import Header from '../components/header'
 import Back from '../components/background'
+import Background from '../components/background';
 
 const Wrapper = styled.div`
   padding: 0px 20px 30px;
@@ -45,7 +46,7 @@ export default class PageTemplate extends React.Component {
 
   return (
       <div>
-      <Back height={this.state.height}/>
+      <Background/>
       <Header pages={pages} categories={categories} primary={true} currentPage={this.props.location.pathname}></Header>
       <Wrapper>
         <Content dangerouslySetInnerHTML={{ __html:page.content}}/>

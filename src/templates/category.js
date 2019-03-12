@@ -2,9 +2,9 @@ import React from 'react'
 import styled from 'styled-components'
 import Link from 'gatsby-link'
 import Header from '../components/header'
-import Back from '../components/background'
 import LazyLoad from 'react-lazyload';
 import Img from 'gatsby-image';
+import Background from '../components/background';
 
 const Wrapper = styled.div`
   padding: 0px 20px 30px;
@@ -90,24 +90,7 @@ const A = styled(Link)`
 export default class PageTemplate extends React.Component {
   constructor(props) {
     super(props)
-      this.state = {
-        loading: true,
-        height: props.height
-      }
   }
-
-  componentWillMount(){
-    if (typeof window !== 'undefined') {
-      if(window.innerWidth > 1000){
-        var height = 1800;
-      } else {
-        var height = 3000;
-      }
-      this.setState({height: height + 'px'});
-    }
-  }
-
-
 
   render() {
   const categories = this.props.data.allWordpressCategory;
@@ -116,7 +99,7 @@ export default class PageTemplate extends React.Component {
   
   return (
       <div>
-      <Back height={this.state.height}/>
+      <Background/>
       <Header pages={pages} categories={categories} primary={true} currentPage={this.props.location.pathname}></Header>
       <Wrapper>
       {categoryPosts !== null &&

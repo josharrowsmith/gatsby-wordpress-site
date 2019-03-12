@@ -1,33 +1,20 @@
 import React from 'react'
 import Particles from 'react-particles-js';
 import particlesconfig from '../json/data.json'
-import particlesconfig2 from '../json/data2.json'
+import styled from 'styled-components';
 
-export default class Background extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        height: props.height,
-        width: props.width,
-        data: props.data
-      }
-    }
-    
-    componentWillMount(){
-      if (typeof window !== 'undefined') {
-        if(window.innerWidth > 1000){
-          var pj = particlesconfig;
-        } else {
-          var pj = particlesconfig2;
-        }
-        this.setState({height: window.innerHeight + 'px',width:window.innerWidth+'px', data:pj});
-      }
-    }
-    render() {
-      return(
-          <Particles height={this.props.height} width={this.props.width}
-                  params={this.state.data}
-              />
-      )
-    }
-  }
+const Background =  ({ children }) => (
+    <>
+      <Particles 
+        params={particlesconfig} 
+        style={{ position: "fixed",
+                  top: 0,
+                  left: 0,
+                  width: "100%",
+                  height: "100%",
+                  background: "black"}} 
+        />
+      {children}
+    </>
+  );
+export default Background;

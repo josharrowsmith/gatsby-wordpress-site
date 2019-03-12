@@ -6,16 +6,17 @@ import { FaEnvelope, FaLinkedin, FaGithub } from 'react-icons/fa';
 const ContactInfo = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
+    grid-column-gap: 200px;
     justify-items: center;
-    position: relative;
-    top: -300px;
+    position: absolute;
+    top: 200vh;
+    left: 25%;
+    margin-bottom: 300px;
+    margin-top: 100px;
     @media screen and (max-width: 768px) {
       display: grid;
       grid-template-columns: 1fr;
-      position: relative;
-      top: -500px;
-      grid-row-gap: 50px;
-      align-self: center;
+      grid-row-gap: 100px;
     } 
   `
 

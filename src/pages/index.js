@@ -1,13 +1,13 @@
 import React from 'react'
 import styled from 'styled-components'
-import Link from 'gatsby-link'
-import Back from '../components/background'
+import Background from '../components/background'
 import Header from '../components/header'
-import Typed from '../components/typed'
+import Typing from '../components/typing'
 import Marquee from '../components/Marquee'
 import Contact from '../components/contact'
 import MobileMarquee from '../components/MobileMarquee'
 import { ParallaxProvider } from 'react-scroll-parallax';
+import { FaAngleDown } from 'react-icons/fa';
 
 const Wrapper = styled.div`
     display: flex;
@@ -37,32 +37,38 @@ const Tags = styled.div`
     } 
 
   `
+const DownButton = styled.a`
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 90vh;
+    left: 49%;
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  `
 
 export default class IndexPage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      height: props.height,
-      width: props.width,
-      data: props.data
-    }
+    this.myDivToFocus = React.createRef()
   }
-  
-  componentDidMount(){
-    if (typeof window !== 'undefined') {
-      if(window.innerWidth > 1000){
-        var height = 2000;
-      } else {
-        var height = 2000;
-      }
-      this.setState({height: height + 'px'});
-    }
+
+  handleOnClick = (event) => {
+    if(this.myDivToFocus.current){
+        window.scrollTo({
+          top: 800,
+          behavior: 'smooth'
+        })
+    } 
   }
+
 
   render() {
     const categories = this.props.data.allWordpressCategory;
     const pages = this.props.data.allWordpressPage;
     const post = this.props.data.wordpressPage; 
+
 
     if(post.acf.front_end_software !== null){
       var frontEnd = post.acf.front_end_software.map((node) =>
@@ -97,14 +103,17 @@ export default class IndexPage extends React.Component {
 
     return(
       <Wrapper>
-        <Back height={this.state.height}/>
+        <Background/>
           <Header pages={pages} categories={categories} currentPage={this.props.location.pathname}></Header>
-            <Typed/>
+            <Typing/>
               <Parlx>
                 <ParallaxProvider>
                  {ParallaxComponent}
                 </ParallaxProvider>
               </Parlx>
+              <div ref={this.myDivToFocus}>
+              <DownButton onClick={this.handleOnClick}><FaAngleDown style={{"color": "white"}} size={50} /></DownButton>
+              </div>
             <Contact/>
       </Wrapper>
     )
