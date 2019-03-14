@@ -28,17 +28,6 @@ export default class PageTemplate extends React.Component {
       }
   }
 
-  componentWillMount(){
-    if (typeof window !== 'undefined') {
-      if(window.innerWidth > 1000){
-        var height = 800;
-      } else {
-        var height = 800;
-      }
-      this.setState({height: height + 'px'});
-    }
-  }
-
   render() {
   const categories = this.props.data.allWordpressCategory;
   const pages = this.props.data.allWordpressPage;

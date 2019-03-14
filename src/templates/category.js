@@ -96,7 +96,17 @@ export default class PageTemplate extends React.Component {
   const categories = this.props.data.allWordpressCategory;
   const pages = this.props.data.allWordpressPage;
   const categoryPosts = this.props.data.allWordpressPost;
-  
+  const categorieName = this.props.data.wordpressCategory;
+  let PostLink;
+
+  //Changing page template for post type
+  if(categorieName.name === "Projects"){
+    PostLink = "post";
+  } else{
+    PostLink = "blog";
+  }
+ 
+
   return (
       <div>
       <Background/>
@@ -106,7 +116,7 @@ export default class PageTemplate extends React.Component {
       <MainContainer>
       {categoryPosts.edges.map(({ node }) => (
         <PostWrapper>
-        <A to={`/post/${node.slug}`}>
+        <A to={`/${PostLink}/${node.slug}`}>
             <LazyLoad height={600}>
             <ImageContanier sizes={node.acf.project_image.localFile.childImageSharp.sizes}/>
             </LazyLoad>
