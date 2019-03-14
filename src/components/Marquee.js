@@ -40,7 +40,7 @@ export default class Marquee extends React.Component {
         return (
             <ParallaxContainer>
                     <Parallax
-                        offsetXMax={`30%`}
+                        offsetXMax={`25%`}
                         offsetXMin={`-5%`}
                     >
                         <TagsContainer>
@@ -49,7 +49,7 @@ export default class Marquee extends React.Component {
                         </TagsContainer>
                     </Parallax>
                     <Parallax
-                        offsetXMax={`40%`}
+                        offsetXMax={`48%`}
                         offsetXMin={`80%`}
                         styleOuter={{marginTop: -380}}
                     >
