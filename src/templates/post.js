@@ -16,11 +16,6 @@ const MainContainer = styled.div`
     width: 100%;
     @media screen and (max-width: 768px) {
         grid-template-columns: 1fr;
-        margin: 0;
-        padding:0;
-        text-align: center;
-        margin-left: 2%;
-        margin-right: 2%;
       } 
 `;
 
@@ -44,7 +39,7 @@ const Wrapper = styled.div`
   top:140px;
   @media screen and (max-width: 768px) {
         top: 80px;
-        padding: 0;
+        position: absolute;
       } 
 `;
 
@@ -55,10 +50,6 @@ const Content = styled.div`
     height: 450px;
     font-size: 1rem;
     @media screen and (max-width: 768px) {
-        font-size: 0.7rem;
-        margin-top: 10px;
-        width: 90%;
-        height: 100%;
       } 
 `
 const TextStyle = styled.p`
@@ -76,7 +67,7 @@ const Tags = styled.p`
     padding: 0;
     margin-left: 10px;
     @media screen and (max-width: 768px) {
-      font-size: 0.6rem;
+      font-size: 0.8rem;
     }
 `
 export default class PageTemplate extends React.Component {
@@ -89,10 +80,23 @@ export default class PageTemplate extends React.Component {
   const pages = this.props.data.allWordpressPage;
   const post = this.props.data.wordpressPost;
   let video;
+  let width;
+  let height;
+
+  //Back to this stupid hack will fix later
+  if (typeof window !== 'undefined') {  
+    if(window.innerWidth > 1000){
+      height = '500'
+      width = '640'
+    } else {
+      height = '300'
+      width = '370'
+    }
+  }
 
   const opts = {
-    height: '500',
-    width: '640',
+    height: height,
+    width: width,
     playerVars: {
       autoplay: 1,
       mute: 1,
