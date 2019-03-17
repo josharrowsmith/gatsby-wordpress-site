@@ -21,17 +21,25 @@ const MainContainer = styled.div`
 
 const Title = styled.h1`
     color: white;
-    font-size: 1rem;
+    font-size: 1.5rem;
     text-decoration: none;
     text-align: left;
     grid-column: 1;
 `
 const ImageContanier = styled(Img)`
-    height: 480px;
+    height: 450px;
+    padding: 10px;
+    border: 5px white solid;
     @media screen and (max-width: 768px) {
       height: 300px;
     }
 `;
+
+const Video = styled.div`
+  border: 5px white solid;
+  padding: 10px;
+  height: 450px;
+`
 
 const Wrapper = styled.div`
   padding: 0px 20px 30px;
@@ -86,11 +94,11 @@ export default class PageTemplate extends React.Component {
   //Back to this stupid hack will fix later
   if (typeof window !== 'undefined') {  
     if(window.innerWidth > 1000){
-      height = '500'
+      height = '450'
       width = '640'
     } else {
       height = '300'
-      width = '370'
+      width = '300'
     }
   }
 
@@ -129,12 +137,16 @@ export default class PageTemplate extends React.Component {
     return (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
   }
 
-  if(post.acf.video !== null){
-    video =  ( <YouTube
+  if(post.acf.video !== null && window.innerWidth > 1000){
+    video = (
+            <Video>
+              <YouTube
                 videoId={YouTubeGetID(post.acf.video)}
                 opts={opts}
                 onReady={this._onReady}
-              /> )
+              />
+            </Video> 
+            )
   } else {
     video = (<ImageContanier sizes={post.acf.gallery.localFile.childImageSharp.sizes} imgStyle={{ "objectFit": "fill"}}/>)
   }
