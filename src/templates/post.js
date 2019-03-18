@@ -137,18 +137,20 @@ export default class PageTemplate extends React.Component {
     return (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
   }
 
-  if(post.acf.video !== null && window.innerWidth > 1000){
-    video = (
-            <Video>
-              <YouTube
-                videoId={YouTubeGetID(post.acf.video)}
-                opts={opts}
-                onReady={this._onReady}
-              />
-            </Video> 
-            )
-  } else {
-    video = (<ImageContanier sizes={post.acf.gallery.localFile.childImageSharp.sizes} imgStyle={{ "objectFit": "fill"}}/>)
+  if (typeof window !== 'undefined') {  
+    if(post.acf.video !== null && window.innerWidth > 1000){
+      video = (
+              <Video>
+                <YouTube
+                  videoId={YouTubeGetID(post.acf.video)}
+                  opts={opts}
+                  onReady={this._onReady}
+                />
+              </Video> 
+              )
+    } else {
+      video = (<ImageContanier sizes={post.acf.gallery.localFile.childImageSharp.sizes} imgStyle={{ "objectFit": "fill"}}/>)
+    }
   }
 
   
