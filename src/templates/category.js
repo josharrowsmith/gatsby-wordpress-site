@@ -62,6 +62,12 @@ const PostWrapper = styled.div`
     &:nth-child(6){
       grid-column: 4 /5;
     }
+    &:nth-child(7){
+      grid-column: 1 /2;
+    }
+    &:nth-child(8){
+      grid-column: 2 /5;
+    }
     @media screen and (max-width: 768px) {
         &:nth-child(n){
           grid-column: auto;
