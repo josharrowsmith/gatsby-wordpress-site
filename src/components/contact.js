@@ -65,7 +65,7 @@ const Links = styled.a`
 
 const contact = ({children}) => (
     <ContactInfo>
-    <Links href="http://46.101.222.219/wp-content/uploads/2019/03/Josh-Arrowsmith-resume-2018-dec.pdf" download="_Resume.pdf"><ResumeBtn>Resume</ResumeBtn></Links>
+    <Links href="http://46.101.222.219/wp-content/uploads/2019/05/resume-2019-freelance.pdf" download="_Resume.pdf"><ResumeBtn>Resume</ResumeBtn></Links>
     <IconGrid>
       <a
         href="https://www.linkedin.com/in/josh-arrowsmith-723b02164/"
