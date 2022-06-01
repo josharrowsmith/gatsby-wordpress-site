@@ -30,7 +30,7 @@
     "react-typed": "^1.1.0",
     "react-typography": "^0.16.18",
     "react-youtube": "^7.9.0",
-    "sharp": "^0.21.2",
+    "sharp": "^0.30.5",
     "styled-components": "^4.1.3",
     "typography": "^0.16.18",
     "typography-theme-stow-lake": "^0.16.18"
